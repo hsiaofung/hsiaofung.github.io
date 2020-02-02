@@ -15,7 +15,9 @@
 
     function action(RGB) {
       console.log("parent", window.parent);
-      window.parent.returnValue = "#" + RGB;
+      console.log("parent", parent.window);
+      // window.parent.returnValue = "#" + RGB;
+      parent.window.returnValue = "#" + RGB;
       // var myBtn = window.opener.document.getElementById("myBtn");
       // myBtn.style.background = "#" + RGB;
 
