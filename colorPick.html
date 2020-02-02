@@ -11,11 +11,11 @@
 <body>
     <script>
         var color = ["00", "33", "66", "99", "CC", "FF"];
-        var RGB = "";
 
-        function action() {
+
+        function action(RGB) {
             // console.log('RGB', RGB)
-            console.log('RGB')
+            console.log('RGB', RGB)
             var colorPickBtn = window.opener.document.getElementById("colorPickBtn");
             colorPickBtn.style.background = RGB;
             // window.close()
@@ -24,11 +24,11 @@
         function blue(R, G) {
             color.forEach(element => {
                 var B = element;
-                RGB = `#${R}${G}${B}`
+                var RGB = `#${R}${G}${B}`
                 document.write(
                     `<td width="12" height="12" bgcolor="#${R}${G}${B}">
                        ${R}${G}${B}
-                       <button onclick="action()"></button>
+                       <button onclick="action(${RGB})"></button>
                     </td>`)
             });
 
