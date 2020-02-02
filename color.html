@@ -14,14 +14,8 @@
     var h = ["FF", "CC", "99", "66", "33", "00"];
 
     function action(RGB) {
-      console.log("parent", window.parent);
-      console.log("parent", parent.window);
-      // window.parent.returnValue = "#" + RGB;
-      parent.window.returnValue = "#" + RGB;
-      // var myBtn = window.opener.document.getElementById("myBtn");
-      // myBtn.style.background = "#" + RGB;
-
-      // console.log("opner", myBtn);
+      var myBtn = window.opener.document.getElementById("myBtn");
+      myBtn.style.background = "#" + RGB;
       window.close();
     }
 
