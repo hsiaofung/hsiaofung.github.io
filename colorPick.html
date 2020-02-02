@@ -13,9 +13,10 @@
         var color = ["00", "33", "66", "99", "CC", "FF"];
 
         function action(RGB) {
-            console.log('RGB', RGB)
+            // console.log('RGB', RGB)
+            console.log('RGB')
             var colorPickBtn = window.opener.document.getElementById("colorPickBtn");
-            colorPickBtn.style.background = RGB;
+            colorPickBtn.style.background = "red";
             // window.close()
         }
 
@@ -23,11 +24,10 @@
             color.forEach(element => {
                 var B = element;
                 var RGB = `#${R}${G}${B}`
-                console.log('RGB', RGB)
                 document.write(
                     `<td width="12" height="12" bgcolor="#${R}${G}${B}">
                        ${R}${G}${B}
-                       <button onclick="action(${RGB})"></button>
+                       <button onclick="action()"></button>
                     </td>`)
             });
 
