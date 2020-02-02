@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    SSS
+    <script>
+      var h = ["FF", "CC", "99", "66", "33", "00"];
+
+      function action(RGB) {
+        console.log("parent", window.parent);
+        // window.parent.returnValue = "#" + RGB;
+        var myBtn = window.opener.document.getElementById("myBtn");
+        myBtn.style.background = "#" + RGB;
+
+        console.log("opner", myBtn);
+        window.close();
+      }
+
+      function Mcell(R, G, B) {
+        document.write('<td bgcolor="#' + R + G + B + '">');
+        document.write(
+          '<a href="#" onClick="action(\'' + (R + G + B) + "')\">"
+        );
+        document.write(
+          "<img border=0 height=12 width=12 ')\" alt='#" + R + G + B + "'>"
+        );
+        document.write("</a>");
+        document.write("</td>");
+      }
+
+      function Mtr(R, B) {
+        document.write("<tr>");
+        for (var i = 0; i < 6; ++i) {
+          Mcell(R, h[i], B);
+        }
+        document.write("</tr>");
+      }
+
+      function Mtable(B) {
+        document.write("<table cellpadding=0 cellspacing=0 border=0>");
+        for (var i = 0; i < 6; ++i) {
+          Mtr(h[i], B);
+        }
+        document.write("</table>");
+      }
+
+      function Mcube() {
+        document.write("<table cellpadding=0 cellsapcing=0 border=0><tr>");
+        for (var i = 0; i < 6; ++i) {
+          if (i % 3 == 0) {
+            document.write("<tr>");
+          }
+          document.write('<td bgcolor="#FFFFFF">');
+          Mtable(h[i]);
+          document.write("</td>");
+        }
+        if (i % 3) {
+          document.write("</tr>");
+        }
+        document.write("</tr></table>");
+      }
+      Mcube();
+    </script>
+  </body>
+</html>

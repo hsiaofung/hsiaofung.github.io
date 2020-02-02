@@ -2,14 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script>
+        function colorpick(field) {
+            console.log("field", field);
+            var width = "220px";
+            var height = "200px";
+            var strWindowFeatures = `
+                      title=no,
+                      menubar=no,
+                      location=no,
+                      resizable=no,
+                      scrollbars=no,
+                      status=no,
+                      width=${width},
+                      height=${height},
+                      navigation=no,
+                      bookmarks=no
+                  `;
+            var rtn = window.open("color.html", "", "width=220px, height=200px");
+            console.log("rtn", rtn);
+            if (rtn != null) field.style.background = rtn;
+            return;
+        }
+    </script>
 </head>
 
 <body>
-    AAAA
+    <button id="myBtn" onclick="colorpick(this)">click</button>
 </body>
 
 </html>
