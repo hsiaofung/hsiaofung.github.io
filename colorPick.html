@@ -13,7 +13,8 @@
         var color = ["00", "33", "66", "99", "CC", "FF"];
 
         function action(RGB) {
-            window.opener.document.getElementById("colorPickBtn").style = `#RGB`
+            var colorPickBtn = window.opener.document.getElementById("colorPickBtn");
+            colorPickBtn.style.background = `#RGB`
             window.close()
         }
 
