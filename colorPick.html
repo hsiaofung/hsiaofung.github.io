@@ -13,8 +13,9 @@
         var color = ["00", "33", "66", "99", "CC", "FF"];
 
         function action(RGB) {
+            console.log('RGB', RGB)
             var colorPickBtn = window.opener.document.getElementById("colorPickBtn");
-            colorPickBtn.style.background = `#${RGB}`
+            colorPickBtn.style.background = RGB;
             // window.close()
         }
 
@@ -23,7 +24,7 @@
                 document.write(
                     `<td width="12" height="12" bgcolor="#${R}${G}${element}">
                        ${R}${G}${element}
-                       <button onclick="action(${R}${G}${element})"></button>
+                       <button onclick="action(#${R}${G}${element})"></button>
                     </td>`)
             });
 
